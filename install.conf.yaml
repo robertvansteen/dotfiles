@@ -1,10 +1,15 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
+    ~/.vimrc: vimrc
+    ~/.shell: shell
+    ~/.zshrc: zshrc
+    ~/.ideavimrc: ideavimrc
 
-
-- clean: ['~']
-
-- link:
-
-
+- shell:
+  - [git submodule update --init --recursive, Installing submodules...]
+  - [brew bundle]
