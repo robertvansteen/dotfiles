@@ -45,3 +45,7 @@ alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 # JS
 alias yarn:fresh="rm -rf node_modules/ && yarn install"
+
+# Git prune squash merged branches
+ alias gbsm='git checkout -q $(git_main_branch) && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $(git_main_branch) $branch) && [[ $(git cherry $(git_main_branch) $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && echo $branch; done'
+ alias gbdsm='gbsm | xargs git branch -d'
