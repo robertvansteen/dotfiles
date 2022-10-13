@@ -9,7 +9,12 @@
     ~/.shell: shell
     ~/.zshrc: zshrc
     ~/.ideavimrc: ideavimrc
+    ~/.config/starship.toml: starship.toml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules...]
-  - [brew bundle]
+  - command: brew bundle
+    stdin: true
+    stdout: true
+  - ["[[ -d ~/.oh-my-zsh ]] || sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\" \"\" --unattended", Setting up oh my zsh...]
+  - ["[[ -f ~/.oh-my-zsh/antigen.zsh ]] || curl -L git.io/antigen > ~/.oh-my-zsh/antigen.zsh", Setting up antigen...]

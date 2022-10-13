@@ -19,6 +19,7 @@ brew 'mas' # Mac App Store manager
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'starship'
+brew 'zsh'
 
 # Spatie Medialibrary
 brew 'jpegoptim'
@@ -35,7 +36,7 @@ brew 'nginx'
 brew 'node'
 brew 'redis'
 brew 'yarn'
-brew 'postgresql'
+brew 'postgresql@14'
 brew 'nvm'
 
 # Apps
@@ -43,7 +44,7 @@ cask '1password'
 cask 'github'
 cask 'phpstorm'
 cask 'ray'
-cask 'slack'
+#cask 'slack'
 cask 'the-unarchiver'
 cask 'transmit'
 cask 'visual-studio-code'
@@ -61,11 +62,14 @@ cask 'whatsapp'
 cask 'vlc'
 cask 'figma'
 cask 'cleanmymac'
+cask 'miro'
+cask 'rectangle'
+cask 'bartender'
 
 # Browsers
 cask 'firefox'
 cask 'microsoft-edge'
-cask 'google-chrome'
+#cask 'google-chrome'
 
 # Fonts
 cask 'font-sf-mono'

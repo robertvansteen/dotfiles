@@ -11,6 +11,12 @@ laravel
 postgres
 )
 
+# Antigen
+source $ZSH/antigen.zsh
+antigen use oh-my-zsh
+antigen bundle zsh-users/zsh-autosuggestions
+antigen apply
+
 # Brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
