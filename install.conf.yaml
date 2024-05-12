@@ -12,6 +12,7 @@
     ~/.config/nvim: nvim  
     ~/.ideavimrc: ideavimrc
     ~/.config/starship.toml: starship.toml
+    ~/.config/nvim: nvim
     ~/.config/kitty: kitty
     ~/.config/bat: bat
 
