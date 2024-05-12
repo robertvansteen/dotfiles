@@ -1,4 +1,86 @@
-set visualbell
-set noerrorbells
-set relativenumber
-set number
+" ============= GENERAL =============
+
+let mapleader=","
+
+" Search settings.
+set incsearch ignorecase smartcase gdefault
+
+set ideajoin                  " Use the IDE's join/J behavior.
+set selectmode=ideaselection  " Use select mode only when IDE sets a selection.
+set timeoutlen=1000           " Timeout for keymappings.
+set clipboard=unnamed,ideaput " Use system clipboard with idea's pasting logic.
+set scrolloff=10              " Pad scrolling with ten lines.
+set showmode                  " Show current mode in statusbar.
+set showcmd                   " Show partial command in statusbar.
+set visualbell                " Removes errorbells.
+set number                    " Show line numbers.
+set relativenumber            " Show relative line numbers.
+
+" ============= PLUGINS =============
+
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set nerdtree
+set ideajoin
+
+
+" ============= MAPPINGS =============
+
+" Better way to indent.
+nnoremap <BS> <<
+nnoremap <TAB> >>
+xnoremap <BS> <gv
+xnoremap <TAB> >gv
+
+" Persistent visuals.
+xnoremap > >gv
+xnoremap < <gv
+xnoremap <C-X> <C-X>gv
+xnoremap <C-A> <C-A>gv
+
+" Remove Arrow keys 😈.
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" Navigation
+map <leader>gd <Action>(GoToDeclaration)
+map <leader>gi <Action>(GoToImplementation)
+
+" Tests
+map <leader>tt <Action>(Run)
+map <leader>tc <Action>(RunClass)
+map <leader>tr <Action>(Rerun)
+map <leader>tf <Action>(RerunFailedTests)
+
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>f <Action>(GotoFile)
+"map <leader>g <Action>(FindInPath)
+map <leader>b <Action>(Switcher)
+" map <leader>g <Action>(ActivateCommitToolWindow)
+map <leader>h <Action>(RecentFiles)
+map <leader>w <c-w>
+map <leader>n :NERDTreeToggle<CR>
+
+" Git
+map <leader>vb <Action>(Git.Branches)
+map <leader>vd <Action>(Vcs.ShowDiffChangedLines)
+
+" Window management
+map <leader>w <c-w>
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" Refactoring
+map <leader>r <Action>(Refactorings.QuickListPopupAction)
+
+map <Leader>q <Action>(CloseContent)
+map <Leader>qa <Action>(CloseAllEditors)
+map<Leader>d <Action>(ShowErrorDescription)

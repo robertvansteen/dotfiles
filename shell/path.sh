@@ -1,6 +1,9 @@
 # Brew
 export PATH="/usr/local/bin:$PATH"
 
+# Local
+export PATH="$HOME./.local/bin:$PATH"
+
 # Load Composer tools
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 

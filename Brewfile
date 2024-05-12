@@ -1,5 +1,4 @@
 # Taps
-tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
@@ -18,8 +17,13 @@ brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
-brew 'starship'
 brew 'zsh'
+brew 'fzf' # Fuzzy searching for terminal
+brew 'fd' # Better version of find
+brew 'bat' # Better version of cat
+brew 'eza' # Better ls
+brew 'tlrc'
+brew 'zoxide' # Better cd
 
 # Spatie Medialibrary
 brew 'jpegoptim'
@@ -54,7 +58,7 @@ cask 'rectangle'
 cask 'iterm2'
 cask 'tower'
 cask 'postico'
-cask 'discord'
+#cask 'discord'
 cask 'raycast'
 cask 'grammarly'
 cask 'tuple'
@@ -75,3 +79,4 @@ cask 'microsoft-edge'
 cask 'font-sf-mono'
 cask 'font-hack-nerd-font'
 cask 'font-sf-mono-nerd-font'
+cask 'font-fira-mono-nerd-font'

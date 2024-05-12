@@ -8,8 +8,12 @@
     ~/.vimrc: vimrc
     ~/.shell: shell
     ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux/tmux.conf 
+    ~/.config/nvim: nvim  
     ~/.ideavimrc: ideavimrc
     ~/.config/starship.toml: starship.toml
+    ~/.config/kitty: kitty
+    ~/.config/bat: bat
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules...]
