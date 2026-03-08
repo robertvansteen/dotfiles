@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[user]
+	email = mail@robertvansteen.nl
+	name = Robert van Steen
+[pull]
+	rebase = true
+[core]
+	excludesFile = ~/.gitignore

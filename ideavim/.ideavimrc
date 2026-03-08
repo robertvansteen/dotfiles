@@ -1,0 +1,82 @@
+set scrolloff=10
+set relativenumber number
+set showmode
+set showcmd
+set visualbell
+set noerrorbells
+set clipboard+=unnamed
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+set surround
+set highlightedyank
+set nerdtree
+set easymotion
+set notimeout
+set which-key
+
+" set <leader> to <space>
+let mapleader = " "
+
+" nnoremap <Space> :action LeaderAction<cr>
+" vnoremap <Space> :action LeaderAction<cr>
+
+inoremap jk <Esc>
+
+map <Leader>cr <Action>(RunClass)
+
+" edit ideavim config
+nnoremap <leader>vv :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
+
+" don't lose selection when indenting
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+" Pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+
+" Popup navigation
+inoremap <C-j> <Action>(PopupMenu-selectNext)
+inoremap <C-k> <Action>(PopupMenu-selectPrev)
+
+" Open NERDTree (use q to exit)
+map <leader>e :NERDTreeFocus<CR>
+
+" Window splits
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" File navigation
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader>/ <action>(FindInPath)
+map <leader><leader> <Action>(GotoFile)
+"map <leader>fl <action>(RecentLocations)
+"map <leader>fs <action>(NewScratchFile)
+
+" Testing
+map <leader>tr <action>(RunClass)
+map <leader>tl <action>(Rerun)
+
+
+" Refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+" Go to code
+nmap <leader>gd <Action>(GotoDeclaration)
+

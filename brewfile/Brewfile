@@ -1,0 +1,45 @@
+tap 'withgraphite/tap'
+
+brew 'git'
+brew 'nvim'
+brew 'zsh'
+brew 'fzf' # Fuzzy searching for terminal
+brew 'fd' # Better version of find
+brew 'bat' # Better version of cat
+brew 'eza' # Better ls
+brew 'tlrc' # A tldr client written in Rust
+brew 'zoxide' # Better cd
+brew 'pure' # Pure prompt
+brew 'graphite'
+brew 'composer'
+brew 'gnupg'
+brew 'pinentry-mac'
+brew 'atuin'
+brew 'rg'
+brew 'pie' # PHP Extension installer
+brew 'gh' # Github CLI
+brew 'heroku' # Heroku CLI
+brew 'httpie'
+brew 'tmux'
+
+# Apps
+cask 'raycast'
+cask 'phpstorm'
+cask 'zen-browser'
+cask '1password'
+cask 'slack'
+cask 'spotify'
+cask 'tuple'
+cask 'visual-studio-code'
+cask 'obsidian'
+cask 'nikitabobko/tap/aerospace'
+cask 'chatgpt'
+cask 'orbstack'
+cask 'httpie'
+
+# Fonts
+cask 'font-sf-mono'
+cask 'font-hack-nerd-font'
+cask 'font-fira-mono-nerd-font'
+cask 'font-jetbrains-mono'
+cask 'font-jetbrains-mono-nerd-font'
