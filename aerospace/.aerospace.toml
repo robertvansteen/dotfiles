@@ -45,6 +45,10 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 on-focus-changed = "move-mouse window-lazy-center"
 
+exec-on-workspace-change = ['/bin/bash', '-c',
+  'if [ "$AEROSPACE_FOCUSED_WORKSPACE" = "G" ]; then aerospace mode gaming; else aerospace mode main; fi'
+]
+
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
@@ -186,6 +190,10 @@ automatically-unhide-macos-hidden-apps = false
 
 [mode.gaming.binding]
   alt-shift-backtick = ['mode main', 'workspace Q']
+
+[[on-window-detected]]
+if.app-id = 'com.blizzard.worldofwarcraft'
+run = ['layout floating', 'move-node-to-workspace G']
 
 [workspace-to-monitor-force-assignment]
     Q = 'main'

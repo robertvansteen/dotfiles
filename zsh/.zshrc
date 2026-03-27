@@ -70,11 +70,16 @@ eval "$(zoxide init zsh)"
 # GPG
 export GPG_TTY=$(tty)
 
+# Word navigation (Option+Arrow)
+bindkey '^[[1;3D' backward-word   # Option+Left
+bindkey '^[[1;3C' forward-word    # Option+Right
+
 # Aliases
 alias dx="docker compose exec"
 alias dart="docker compose exec php artisan" # Run php artisan in a docker-compose environment.
 alias claudew='CLAUDE_CONFIG_DIR=~/.claude-work claude'
 alias claudep='CLAUDE_CONFIG_DIR=~/.claude-personal claude'
+alias reload='source ~/.zshrc'
 export EDITOR=nvim
 export PATH="$HOME/.spin/bin:$PATH"
 
@@ -115,3 +120,8 @@ spaceship_git() {
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
+# fnm (Fast Node Manager)
+eval "$(fnm env --use-on-cd)"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
