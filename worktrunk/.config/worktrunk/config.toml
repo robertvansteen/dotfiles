@@ -1,0 +1,1 @@
+post-switch = "tmux rename-window '{{ branch | sanitize }}'"

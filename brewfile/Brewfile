@@ -21,6 +21,7 @@ brew 'gh' # Github CLI
 brew 'heroku' # Heroku CLI
 brew 'httpie'
 brew 'tmux'
+brew 'git-delta' # Better diff viewer
 
 # Apps
 cask 'raycast'
