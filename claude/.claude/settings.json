@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$TMUX\" ] && current=$(tmux display-message -p '#W') && tmux rename-window \"${current%\\*}\"; true",
+            "command": "[ -n \"$TMUX_PANE\" ] && rm -f \"/tmp/claude-panes/$TMUX_PANE\"; true",
             "timeout": 5
           }
         ]
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$TMUX\" ] && current=$(tmux display-message -p '#W') && tmux rename-window \"${current%\\*}\"; true",
+            "command": "[ -n \"$TMUX_PANE\" ] && mkdir -p /tmp/claude-panes && echo working > \"/tmp/claude-panes/$TMUX_PANE\"; true",
             "timeout": 5
           }
         ]
@@ -30,7 +30,31 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$TMUX\" ] && current=$(tmux display-message -p '#W') && case \"$current\" in *\\*) ;; *) tmux rename-window \"${current}*\";; esac; true",
+            "command": "[ -n \"$TMUX_PANE\" ] && mkdir -p /tmp/claude-panes && echo idle > \"/tmp/claude-panes/$TMUX_PANE\"; true",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$TMUX_PANE\" ] && mkdir -p /tmp/claude-panes && echo working > \"/tmp/claude-panes/$TMUX_PANE\"; true",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$TMUX_PANE\" ] && mkdir -p /tmp/claude-panes && echo waiting > \"/tmp/claude-panes/$TMUX_PANE\"; true",
             "timeout": 5
           }
         ]

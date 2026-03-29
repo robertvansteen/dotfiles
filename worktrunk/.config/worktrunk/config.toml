@@ -1,1 +1,2 @@
+pre-switch = "git fetch origin"
 post-switch = "tmux rename-window '{{ branch | sanitize }}'"

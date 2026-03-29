@@ -67,6 +67,9 @@ _fzf_comprun() {
 # Zoxide
 eval "$(zoxide init zsh)"
 
+# Direnv
+eval "$(direnv hook zsh)"
+
 # GPG
 export GPG_TTY=$(tty)
 
@@ -80,6 +83,7 @@ alias dart="docker compose exec php artisan" # Run php artisan in a docker-compo
 alias claudew='CLAUDE_CONFIG_DIR=~/.claude-work claude'
 alias claudep='CLAUDE_CONFIG_DIR=~/.claude-personal claude'
 alias reload='source ~/.zshrc'
+alias wtc='wt switch --create --base origin/main'
 export EDITOR=nvim
 export PATH="$HOME/.spin/bin:$PATH"
 
