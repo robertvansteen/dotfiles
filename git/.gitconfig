@@ -1,3 +1,5 @@
+[alias]
+	nah = "!git reset --hard && git clean -fd"
 [init]
 	defaultBranch = main
 [commit]

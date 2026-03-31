@@ -1,5 +1,3 @@
-tap 'withgraphite/tap'
-
 brew 'git'
 brew 'nvim'
 brew 'zsh'
@@ -9,8 +7,13 @@ brew 'bat' # Better version of cat
 brew 'eza' # Better ls
 brew 'tlrc' # A tldr client written in Rust
 brew 'zoxide' # Better cd
-brew 'pure' # Pure prompt
-brew 'graphite'
+brew 'stow' # Symlink manager for dotfiles
+brew 'spaceship' # Spaceship prompt
+brew 'fnm' # Fast Node Manager
+brew 'direnv' # Per-directory environment variables
+brew 'jj' # Jujutsu version control
+brew 'zsh-autosuggestions' # Fish-like autosuggestions
+brew 'zsh-syntax-highlighting' # Syntax highlighting for zsh
 brew 'composer'
 brew 'gnupg'
 brew 'pinentry-mac'
@@ -22,6 +25,7 @@ brew 'heroku' # Heroku CLI
 brew 'httpie'
 brew 'tmux'
 brew 'git-delta' # Better diff viewer
+brew 'yazi' # Terminal file explorer
 
 # Apps
 cask 'raycast'

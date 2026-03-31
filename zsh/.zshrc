@@ -13,14 +13,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $(brew --prefix)/opt/spaceship/spaceship.zsh
 spaceship remove docker
-
-# Pure Prompt
-#autoload -U promptinit; promptinit
-#if [[ $- == *i* ]]; then
-#  prompt pure
-#fi
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
@@ -41,8 +38,6 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
-
-# source ~/dotfiles/shell/fzf-git.sh/fzf-git.sh
 
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
@@ -70,6 +65,9 @@ eval "$(zoxide init zsh)"
 # Direnv
 eval "$(direnv hook zsh)"
 
+# Atuin
+eval "$(atuin init zsh)"
+
 # GPG
 export GPG_TTY=$(tty)
 
@@ -77,13 +75,43 @@ export GPG_TTY=$(tty)
 bindkey '^[[1;3D' backward-word   # Option+Left
 bindkey '^[[1;3C' forward-word    # Option+Right
 
-# Aliases
+# Yazi: cd to directory on quit
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+# Better defaults
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -l --icons --group-directories-first --git --no-user'
+alias la='eza -la --icons --group-directories-first --git --no-user'
+alias lt='eza -T --icons --group-directories-first --level=2'
+alias cat='bat --paging=never --style=plain'
+
+# Docker
 alias dx="docker compose exec"
-alias dart="docker compose exec php artisan" # Run php artisan in a docker-compose environment.
+alias dart="docker compose exec php artisan"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dcl="docker compose logs -f"
+alias dcr="docker compose restart"
+
+# Claude
 alias claudew='CLAUDE_CONFIG_DIR=~/.claude-work claude'
 alias claudep='CLAUDE_CONFIG_DIR=~/.claude-personal claude'
+
+# Tmux
+alias ta='tmux attach -t'
+alias tls='tmux list-sessions'
+
+# Misc
 alias reload='source ~/.zshrc'
 alias wtc='wt switch --create --base origin/main'
+alias dots='cd ~/dotfiles && nvim'
 export EDITOR=nvim
 export PATH="$HOME/.spin/bin:$PATH"
 
